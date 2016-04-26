@@ -14,6 +14,7 @@
 		E407A9881CC17532001692E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E407A9861CC17532001692E7 /* LaunchScreen.storyboard */; };
 		E442B36F1CC6DB0F00FB16E1 /* BlackJackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */; };
 		E442B3711CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */; };
+		E4B8EE791CD018DB00426BFC /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8EE781CD018DB00426BFC /* ScoreBoardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E407A9891CC17532001692E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackViewController.swift; sourceTree = "<group>"; };
 		E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackButtonsViewController.swift; sourceTree = "<group>"; };
+		E4B8EE781CD018DB00426BFC /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				E407A97D1CC17532001692E7 /* AppDelegate.swift */,
 				E407A97F1CC17532001692E7 /* ViewController.swift */,
 				E407A9811CC17532001692E7 /* Main.storyboard */,
+				E4B8EE781CD018DB00426BFC /* ScoreBoardViewController.swift */,
 				E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */,
 				E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */,
 				E407A9841CC17532001692E7 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				E442B36F1CC6DB0F00FB16E1 /* BlackJackViewController.swift in Sources */,
 				E407A9801CC17532001692E7 /* ViewController.swift in Sources */,
 				E407A97E1CC17532001692E7 /* AppDelegate.swift in Sources */,
+				E4B8EE791CD018DB00426BFC /* ScoreBoardViewController.swift in Sources */,
 				E442B3711CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1008" y="415"/>
         </scene>
-        <!--View Controller-->
+        <!--Score Board View Controller-->
         <scene sceneID="bWt-Yy-5S7">
             <objects>
-                <viewController id="E3M-bp-KLR" sceneMemberID="viewController">
+                <viewController id="E3M-bp-KLR" customClass="ScoreBoardViewController" customModule="BlackJack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0yh-4R-DD6"/>
                         <viewControllerLayoutGuide type="bottom" id="IfQ-Hf-Rax"/>
@@ -236,6 +236,18 @@
                             <constraint firstItem="9zd-jl-Dty" firstAttribute="centerY" secondItem="XRC-Ol-NyD" secondAttribute="centerY" id="l64-fD-SP2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fifthScoreNameLabel" destination="pPY-Ff-6VI" id="f8g-1E-ljJ"/>
+                        <outlet property="fifthScoreValueLabel" destination="t2Q-z2-tjF" id="Gjf-F4-2mX"/>
+                        <outlet property="fourthScoreNameLabel" destination="yH0-Vy-cu4" id="e5G-GS-SVh"/>
+                        <outlet property="fourthScoreValueLabel" destination="czB-S2-Dc4" id="A0R-hg-bHZ"/>
+                        <outlet property="secondScoreNameLabel" destination="8gJ-MC-qnz" id="9Jb-UL-ykm"/>
+                        <outlet property="secondScoreValueLabel" destination="GUR-tR-Fpl" id="JOU-If-FEW"/>
+                        <outlet property="thirdScoreNameLabel" destination="7kB-n8-psC" id="jxa-af-YdY"/>
+                        <outlet property="thirdScoreValueLabel" destination="SE5-XC-PPw" id="y5s-og-T7p"/>
+                        <outlet property="topScoreNameLabel" destination="bRY-HB-GtJ" id="p7v-Sz-KJv"/>
+                        <outlet property="topScoreValueLabel" destination="L2p-W0-TnX" id="EPc-bc-gqf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeS-6k-7Fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
