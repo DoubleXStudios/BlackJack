@@ -46,6 +46,7 @@ class GamePlayer{
     func finalizeTransaction(success:Bool){
         if(success){
             bank -= credit
+            credit = 0
         } else {
             credit = 0
         }
