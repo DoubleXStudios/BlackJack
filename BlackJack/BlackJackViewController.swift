@@ -12,6 +12,12 @@ class BlackJackViewController: UIViewController {
 
     @IBOutlet weak var BigContainer: UIView!
     
+    var game: BlackJackGame = BlackJackGame()
+    var gamePlayer: GamePlayer = GamePlayer(name: "Bob", bank: 100)
+    
+    var buttonsViewController: BlackJackButtonsViewController?
+    var headerViewController: BlackJackGameHeaderViewController?
+    
     
     
     
@@ -21,11 +27,28 @@ class BlackJackViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateAll(){
+        if buttonsViewController != nil{
+            
+        }
+        
+        if headerViewController != nil{
+            headerViewController?.reloadValues()
+        }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? BlackJackButtonsViewController
+            where segue.identifier == "EmbedSegue3" {
+                self.buttonsViewController = vc
+                buttonsViewController?.gameController = self
+                
+        } else if let vc = segue.destinationViewController as? BlackJackGameHeaderViewController
+            where segue.identifier == "EmbedSegue1" {
+                self.headerViewController = vc
+                headerViewController?.gameController = self
+        }
+    }
 
 
 }

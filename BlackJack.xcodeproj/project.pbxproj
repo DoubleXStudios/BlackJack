@@ -15,6 +15,10 @@
 		E407A9881CC17532001692E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E407A9861CC17532001692E7 /* LaunchScreen.storyboard */; };
 		E442B36F1CC6DB0F00FB16E1 /* BlackJackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */; };
 		E442B3711CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */; };
+		E491B1B51CD3EC820040802C /* BlackJackGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1B41CD3EC820040802C /* BlackJackGame.swift */; };
+		E491B1B71CD3ED960040802C /* BlackJackGameHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1B61CD3ED960040802C /* BlackJackGameHeaderViewController.swift */; };
+		E491B1B91CD3EE100040802C /* GamePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1B81CD3EE100040802C /* GamePlayer.swift */; };
+		E491B1BB1CD4173A0040802C /* HighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1BA1CD4173A0040802C /* HighScores.swift */; };
 		E4B8EE791CD018DB00426BFC /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8EE781CD018DB00426BFC /* ScoreBoardViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,10 @@
 		E407A9891CC17532001692E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackViewController.swift; sourceTree = "<group>"; };
 		E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackButtonsViewController.swift; sourceTree = "<group>"; };
+		E491B1B41CD3EC820040802C /* BlackJackGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackGame.swift; sourceTree = "<group>"; };
+		E491B1B61CD3ED960040802C /* BlackJackGameHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackGameHeaderViewController.swift; sourceTree = "<group>"; };
+		E491B1B81CD3EE100040802C /* GamePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayer.swift; sourceTree = "<group>"; };
+		E491B1BA1CD4173A0040802C /* HighScores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScores.swift; sourceTree = "<group>"; };
 		E4B8EE781CD018DB00426BFC /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +101,10 @@
 				E407A9841CC17532001692E7 /* Assets.xcassets */,
 				E407A9861CC17532001692E7 /* LaunchScreen.storyboard */,
 				E407A9891CC17532001692E7 /* Info.plist */,
+				E491B1B41CD3EC820040802C /* BlackJackGame.swift */,
+				E491B1B61CD3ED960040802C /* BlackJackGameHeaderViewController.swift */,
+				E491B1B81CD3EE100040802C /* GamePlayer.swift */,
+				E491B1BA1CD4173A0040802C /* HighScores.swift */,
 			);
 			path = BlackJack;
 			sourceTree = "<group>";
@@ -220,7 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E491B1B51CD3EC820040802C /* BlackJackGame.swift in Sources */,
+				E491B1BB1CD4173A0040802C /* HighScores.swift in Sources */,
 				E442B36F1CC6DB0F00FB16E1 /* BlackJackViewController.swift in Sources */,
+				E491B1B91CD3EE100040802C /* GamePlayer.swift in Sources */,
+				E491B1B71CD3ED960040802C /* BlackJackGameHeaderViewController.swift in Sources */,
 				E407A9801CC17532001692E7 /* ViewController.swift in Sources */,
 				E407A97E1CC17532001692E7 /* AppDelegate.swift in Sources */,
 				E4B8EE791CD018DB00426BFC /* ScoreBoardViewController.swift in Sources */,
