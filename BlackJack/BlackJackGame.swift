@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum State{
+enum StateX{
     case Betting
     
     case Game
@@ -16,8 +16,8 @@ enum State{
     case Payout
 }
 
-class BlackJackGame{
-    var currentState: State = .Betting
+class BlackJackGameX{
+    var currentState: StateX = .Betting
     var currentBet: Int = 10
     
 }

@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "80x80_100.png",
+      "filename" : "card_queen_spades_alt.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "120x120_100.png",
       "scale" : "2x"
     },
     {

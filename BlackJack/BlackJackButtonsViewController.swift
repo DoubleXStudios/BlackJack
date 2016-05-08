@@ -39,6 +39,11 @@ class BlackJackButtonsViewController: UIViewController {
     @IBOutlet weak var chip100Button: UIButton!
     @IBOutlet weak var chip500Button: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var dealButton: UIButton!
+    @IBOutlet weak var surrenderButton: UIButton!
+    @IBOutlet weak var doubleButton: UIButton!
+    @IBOutlet weak var hitButton: UIButton!
+    @IBOutlet weak var standButton: UIButton!
     
     
     var gameController: BlackJackViewController?
@@ -73,24 +78,7 @@ class BlackJackButtonsViewController: UIViewController {
     @IBAction func chip1Clicked(sender: AnyObject) {
         dealerTransaction(1)
     }
-//    @IBAction func chip1Remove(sender: AnyObject) {
-//        UIView.animateWithDuration(1.0,
-//            animations: {
-//                self.chip1Button.titleLabel?.textColor = UIColor.redColor()
-//                self.chip1Button.transform = CGAffineTransformMakeScale(0.6, 0.6)
-//                
-//            },
-//            completion: { finish in
-//                UIView.animateWithDuration(1.0){
-//                    self.chip1Button.transform = CGAffineTransformIdentity
-//                    self.chip1Button.titleLabel?.textColor = UIColor.whiteColor()
-//                }
-//        })
-//        gameController?.game.currentBet -= 1
-//        gameController?.gamePlayer.bank += 1
-//        gameController?.updateAll()
-//    }
-    
+
     
 
     @IBAction func chip5Clicked(sender: AnyObject) {
@@ -116,38 +104,49 @@ class BlackJackButtonsViewController: UIViewController {
     @IBAction func chip500Clicked(sender: AnyObject) {
         dealerTransaction(500)
     }
+    
     func dealerTransaction(amount: Int){
         if gameController != nil{
-            gameController?.game.currentBet += (gameController?.gamePlayer.requestMoney(amount))!
-            gameController?.updateAll()
+            if(gameController?.gamePlayer.withdraw(amount))!{
+                gameController?.game.currentBet += amount
+                gameController?.updateAll()
+            }
+            
         }
     }
     
     @IBAction func clearTransaction(sender: AnyObject) {
-        gameController?.gamePlayer.finalizeTransaction(false)
+        gameController?.gamePlayer.bank += (gameController?.game.currentBet)!
+        gameController?.game.currentBet = 0
         gameController?.updateAll()
 
     }
     
     
     @IBAction func hitClicked(sender: AnyObject) {
-        
-    }
+        gameController?.hit()    }
     
     @IBAction func standClicked(sender: AnyObject) {
-        
-        
+        gameController?.game.stand()
+        gameController?.updateAll()
     }
 
     @IBAction func dealClicked(sender: AnyObject) {
-        if gameController != nil{
-           gameController?.gamePlayer.finalizeTransaction(true)
-           gameController?.updateAll()
+        print(gameController?.game.state)
+        if(gameController?.game.state != State.Payout && gameController?.game.state != State.Revealing){
+            if gameController != nil{
+                gameController?.game.deal()
+                gameController?.updateAll()
 
+            }
+        } else {
+            gameController?.newGame()
         }
         
     }
     
+    
+    //actually
     @IBAction func splitClicked(sender: AnyObject) {
         
     }

@@ -8,27 +8,27 @@
 
 import Foundation
 
-enum Card{
+enum CardX{
     case Card1
     case Card2
     case Card3
 }
 
-struct Hand{
-    var card1: Card
-    var card2: Card
+struct HandX{
+    var card1: CardX
+    var card2: CardX
 }
 
 class GamePlayer{
     var name: String
     var bank: Int
-    var hand: Array<Hand>
+    var hand: Array<HandX>
     var credit: Int
     
     
     init(name :String = "new player", bank :Int = 50){
-        hand = Array<Hand>()
-        hand.append(Hand(card1: .Card1, card2: .Card2))
+        hand = Array<HandX>()
+        hand.append(HandX(card1: .Card1, card2: .Card2))
         self.name = name
         self.bank = bank
         self.credit = 0

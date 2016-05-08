@@ -13,8 +13,13 @@
 		E407A9831CC17532001692E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E407A9811CC17532001692E7 /* Main.storyboard */; };
 		E407A9851CC17532001692E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E407A9841CC17532001692E7 /* Assets.xcassets */; };
 		E407A9881CC17532001692E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E407A9861CC17532001692E7 /* LaunchScreen.storyboard */; };
+		E4227F2A1CD94500006F58F2 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4227F291CD94500006F58F2 /* CardsViewController.swift */; };
 		E442B36F1CC6DB0F00FB16E1 /* BlackJackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */; };
 		E442B3711CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */; };
+		E48582581CDD1A7B001FF6D4 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48582541CDD1A7B001FF6D4 /* Deck.swift */; };
+		E48582591CDD1A7B001FF6D4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48582551CDD1A7B001FF6D4 /* Game.swift */; };
+		E485825A1CDD1A7B001FF6D4 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48582561CDD1A7B001FF6D4 /* Hand.swift */; };
+		E485825B1CDD1A7B001FF6D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48582571CDD1A7B001FF6D4 /* Player.swift */; };
 		E491B1B51CD3EC820040802C /* BlackJackGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1B41CD3EC820040802C /* BlackJackGame.swift */; };
 		E491B1B71CD3ED960040802C /* BlackJackGameHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1B61CD3ED960040802C /* BlackJackGameHeaderViewController.swift */; };
 		E491B1B91CD3EE100040802C /* GamePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491B1B81CD3EE100040802C /* GamePlayer.swift */; };
@@ -33,8 +38,13 @@
 		E407A9841CC17532001692E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E407A9871CC17532001692E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E407A9891CC17532001692E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4227F291CD94500006F58F2 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		E442B36E1CC6DB0E00FB16E1 /* BlackJackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackViewController.swift; sourceTree = "<group>"; };
 		E442B3701CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackButtonsViewController.swift; sourceTree = "<group>"; };
+		E48582541CDD1A7B001FF6D4 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		E48582551CDD1A7B001FF6D4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E48582561CDD1A7B001FF6D4 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		E48582571CDD1A7B001FF6D4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E491B1B41CD3EC820040802C /* BlackJackGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackGame.swift; sourceTree = "<group>"; };
 		E491B1B61CD3ED960040802C /* BlackJackGameHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackJackGameHeaderViewController.swift; sourceTree = "<group>"; };
 		E491B1B81CD3EE100040802C /* GamePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayer.swift; sourceTree = "<group>"; };
@@ -92,6 +102,7 @@
 		E407A97C1CC17532001692E7 /* BlackJack */ = {
 			isa = PBXGroup;
 			children = (
+				E48582531CDD1A50001FF6D4 /* BlackJackModels */,
 				E407A97D1CC17532001692E7 /* AppDelegate.swift */,
 				E407A97F1CC17532001692E7 /* ViewController.swift */,
 				E407A9811CC17532001692E7 /* Main.storyboard */,
@@ -105,8 +116,20 @@
 				E491B1B61CD3ED960040802C /* BlackJackGameHeaderViewController.swift */,
 				E491B1B81CD3EE100040802C /* GamePlayer.swift */,
 				E491B1BA1CD4173A0040802C /* HighScores.swift */,
+				E4227F291CD94500006F58F2 /* CardsViewController.swift */,
 			);
 			path = BlackJack;
+			sourceTree = "<group>";
+		};
+		E48582531CDD1A50001FF6D4 /* BlackJackModels */ = {
+			isa = PBXGroup;
+			children = (
+				E48582541CDD1A7B001FF6D4 /* Deck.swift */,
+				E48582551CDD1A7B001FF6D4 /* Game.swift */,
+				E48582561CDD1A7B001FF6D4 /* Hand.swift */,
+				E48582571CDD1A7B001FF6D4 /* Player.swift */,
+			);
+			name = BlackJackModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,12 +257,17 @@
 			files = (
 				E491B1B51CD3EC820040802C /* BlackJackGame.swift in Sources */,
 				E491B1BB1CD4173A0040802C /* HighScores.swift in Sources */,
+				E4227F2A1CD94500006F58F2 /* CardsViewController.swift in Sources */,
 				E442B36F1CC6DB0F00FB16E1 /* BlackJackViewController.swift in Sources */,
+				E485825B1CDD1A7B001FF6D4 /* Player.swift in Sources */,
+				E485825A1CDD1A7B001FF6D4 /* Hand.swift in Sources */,
 				E491B1B91CD3EE100040802C /* GamePlayer.swift in Sources */,
 				E491B1B71CD3ED960040802C /* BlackJackGameHeaderViewController.swift in Sources */,
 				E407A9801CC17532001692E7 /* ViewController.swift in Sources */,
+				E48582591CDD1A7B001FF6D4 /* Game.swift in Sources */,
 				E407A97E1CC17532001692E7 /* AppDelegate.swift in Sources */,
 				E4B8EE791CD018DB00426BFC /* ScoreBoardViewController.swift in Sources */,
+				E48582581CDD1A7B001FF6D4 /* Deck.swift in Sources */,
 				E442B3711CC6DF7A00FB16E1 /* BlackJackButtonsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
