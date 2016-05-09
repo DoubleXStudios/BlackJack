@@ -9,17 +9,51 @@
 import Foundation
 import RealmSwift
 
-class HighScores: Object {
+class HighScores  {
     
-    dynamic var highScores: [Score] = [Score()]
+    var highScores: [HighScore] = []
+    
+    func populateHighScoresFromRealm(){
+        let realmObjects = blackJackRealm.objects(HighScore)
+        for o in realmObjects{
+            print("Name: \(o.name), Score: \(o.score)")
+            if(o.name == ""){
+                try! blackJackRealm.write({ 
+                    blackJackRealm.delete(o)
+                })
+            }
+            appendHighScore(o.name, score: o.score)
+        }
+        
+    }
+    
+    func updateHighScore(name: String, scoreValue: Int){
+        let realmObjects = blackJackRealm.objects(HighScore)
+        for o in realmObjects{
+            if(o.name == name){
+                try! blackJackRealm.write{
+                    o.score = scoreValue
+                }
+                self.highScores = []
+                populateHighScoresFromRealm()
+                return
+            }
+        }
+        var score: HighScore = HighScore()
+        score.name = name
+        score.score = scoreValue
+        try! blackJackRealm.write{
+            blackJackRealm.add(score)
+        }
+        populateHighScoresFromRealm()
+    }
+
     
     func appendHighScore(name: String, score: Int){
-        let newScore = Score(value: ["name": name, "score":score])
+        let newScore = HighScore(value: ["name": name, "score":score])
         highScores.append(newScore)
-        highScores.sortInPlace(){$0.score > $1.score}
-        if(highScores.count > 5){
-            highScores.dropLast()
-        }
+        highScores.sortInPlace(){$0.score < $1.score}
+
     }
     
     func getHighscoresAsDictionary()->[String:Int]{
@@ -36,9 +70,4 @@ class HighScores: Object {
 //  override static func ignoredProperties() -> [String] {
 //    return []
 //  }
-}
-
-class Score: Object {
-    dynamic var name:String = "no name"
-    dynamic var score:Int = 0
 }

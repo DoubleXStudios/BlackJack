@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-let realm = try! Realm()
+let blackJackRealm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

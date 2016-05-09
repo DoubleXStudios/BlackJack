@@ -244,12 +244,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fifthPlaceLabel" destination="PQs-Aa-sD8" id="gKm-EB-IzD"/>
                         <outlet property="fifthScoreNameLabel" destination="pPY-Ff-6VI" id="f8g-1E-ljJ"/>
                         <outlet property="fifthScoreValueLabel" destination="t2Q-z2-tjF" id="Gjf-F4-2mX"/>
+                        <outlet property="firstPlaceLabel" destination="GHM-D8-EhE" id="Dpa-D7-D3d"/>
+                        <outlet property="fourthPlaceLabel" destination="xJn-xt-EmG" id="T2r-Jm-Clj"/>
                         <outlet property="fourthScoreNameLabel" destination="yH0-Vy-cu4" id="e5G-GS-SVh"/>
                         <outlet property="fourthScoreValueLabel" destination="czB-S2-Dc4" id="A0R-hg-bHZ"/>
+                        <outlet property="secondPlaceLabel" destination="mLp-2o-u91" id="OJz-QL-YAG"/>
                         <outlet property="secondScoreNameLabel" destination="8gJ-MC-qnz" id="9Jb-UL-ykm"/>
                         <outlet property="secondScoreValueLabel" destination="GUR-tR-Fpl" id="JOU-If-FEW"/>
+                        <outlet property="thirdPlaceLabel" destination="2LV-KK-Lti" id="QkY-ts-2VD"/>
                         <outlet property="thirdScoreNameLabel" destination="7kB-n8-psC" id="jxa-af-YdY"/>
                         <outlet property="thirdScoreValueLabel" destination="SE5-XC-PPw" id="y5s-og-T7p"/>
                         <outlet property="topScoreNameLabel" destination="bRY-HB-GtJ" id="p7v-Sz-KJv"/>
@@ -329,6 +334,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="108"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="❮ Quit"/>
+                                        <connections>
+                                            <segue destination="OwN-bv-mOp" kind="unwind" unwindAction="unwindToHome:" id="9q8-l4-Xqn"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-e8-kG0">
                                         <rect key="frame" x="200" y="0.0" width="200" height="108"/>
@@ -361,6 +369,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSl-vK-bqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OwN-bv-mOp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1723" y="-2"/>
         </scene>

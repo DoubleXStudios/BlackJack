@@ -21,7 +21,9 @@ class BlackJackViewController: UIViewController {
     
     func newGame(){
         game = Game(newPlayer: gamePlayer)
-        print(game.dealerHand.getHandValue())
+        let scoreBoard = HighScores()
+        scoreBoard.updateHighScore(gamePlayer.name, scoreValue: gamePlayer.highScore)
+        //print(game.dealerHand.getHandValue())
         buttonsViewController?.dealButton.setTitle("Deal", forState: .Normal)
         cardsViewController?.removeMessageAndReset()
         updateAll()
