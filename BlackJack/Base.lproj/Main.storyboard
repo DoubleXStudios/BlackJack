@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -417,22 +417,22 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rnk-Ih-W3M">
                                                         <rect key="frame" x="0.0" y="208" width="600" height="104"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="46p-Jg-i5B">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="46p-Jg-i5B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="jHP-QQ-SIw">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="jHP-QQ-SIw">
                                                                 <rect key="frame" x="100" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="kui-49-qaJ">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="kui-49-qaJ">
                                                                 <rect key="frame" x="200" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-Pj-7Dx">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-Pj-7Dx">
                                                                 <rect key="frame" x="300" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-Vz-or9">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-Vz-or9">
                                                                 <rect key="frame" x="400" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="Fn0-ah-Dl5">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="Fn0-ah-Dl5">
                                                                 <rect key="frame" x="500" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                         </subviews>

@@ -2,8 +2,10 @@ import UIKit
 
 import Foundation
 
+//Class Deck holds an array of playing cards and information about the cards such as their value and rank in BlackJack
 public class Deck {
     
+    //array of cards representing the deck
     var cards: [Card] = [Card]()
     public init(){
         
@@ -34,7 +36,8 @@ public class Deck {
         return card
     }
     
-    
+    //this func is used as a replacment for shuffle.
+    //instead of shuffling the deck, the program will select a random card from the deck
     public func getRandomCard()-> Card{
         
         let rand =  Int(arc4random_uniform(10000)%52)
@@ -79,11 +82,12 @@ public enum Suit: String{    //assign suits their names
     case club = "Clubs"
 }
 
-//struct to represent card object. Every card object will have it's own rank and suit
+//class to represent card object. Every card object will have it's own rank and suit
 public class Card{
     public let rank: Rank
     public let suit: Suit
     
+    //this boolean keeps track of whether or not a card has been taken out of the deck (to prevent the same card being selected twice)
     public var inDeck: Bool
     
     public init(rank: Rank, suit: Suit, inDeck: Bool){
@@ -91,13 +95,6 @@ public class Card{
         self.suit = suit
         self.inDeck = inDeck
     }
-    
-    
-
-    
 }
-
-
-//generate a deck of card objects
 
 

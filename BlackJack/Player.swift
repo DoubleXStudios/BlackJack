@@ -1,5 +1,6 @@
 import Foundation
 
+//player objects have a name and a bank to store their winnings
 public class Player{
     
     public var name: String
@@ -10,6 +11,7 @@ public class Player{
         name = user
     }
     
+    //take the money specified out of the bank if the amount they are trying to take out does not produce a negative bank value
     public func withdraw (requestedAmount: Int)-> Bool{
         if(requestedAmount > self.bank){
             return false
