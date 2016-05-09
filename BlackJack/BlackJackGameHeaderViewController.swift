@@ -13,12 +13,11 @@ class BlackJackGameHeaderViewController: UIViewController {
     var gameController: BlackJackViewController?
     
 
-    @IBOutlet weak var playerCurrentBet: UILabel!
     
     @IBOutlet weak var PlayerNameTextField: UITextField!
     
-    @IBAction func playerNameChanged(sender: AnyObject) {
-        gameController?.game.player.name = PlayerNameTextField.text!
+    @IBAction func playerNameChangeComplete(sender: AnyObject) {
+        gameController?.gamePlayer.name = PlayerNameTextField.text!
     }
     
     @IBOutlet weak var playerBank: UILabel!
@@ -35,8 +34,7 @@ class BlackJackGameHeaderViewController: UIViewController {
     func reloadValues(){
         if(gameController != nil){
             PlayerNameTextField.text = gameController!.gamePlayer.name
-            playerBank.text = "Bank: $ \(gameController!.gamePlayer.bank)"
-            playerCurrentBet.text = "Bet: $ \(gameController!.game.currentBet)"
+            playerBank.text = "Bank: $ \(gameController!.gamePlayer.bank) Bet: $ \(gameController!.game.currentBet)"
         }
     }
     

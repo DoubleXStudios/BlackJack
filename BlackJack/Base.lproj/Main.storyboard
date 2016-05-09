@@ -325,28 +325,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-vi-8lm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9M-Fz-tGM">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="108"/>
-                                        <connections>
-                                            <segue destination="bMe-WC-r7A" kind="embed" id="I9k-wA-nU5"/>
-                                        </connections>
-                                    </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-ha-c8C">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="❮ Quit"/>
+                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-e8-kG0">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="108"/>
+                                        <rect key="frame" x="200" y="0.0" width="200" height="108"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <action selector="playerNameChanged:" destination="qu5-Ci-gwe" eventType="editingDidEnd" id="xkW-lE-Ulb"/>
+                                            <action selector="playerNameChangeComplete:" destination="qu5-Ci-gwe" eventType="editingDidEnd" id="wO5-Mn-eom"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet: $ 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydw-Xf-kz8">
-                                        <rect key="frame" x="300" y="0.0" width="150" height="108"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank: $ 1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRO-he-Htl">
-                                        <rect key="frame" x="450" y="0.0" width="150" height="108"/>
+                                        <rect key="frame" x="400" y="0.0" width="200" height="108"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -365,52 +358,11 @@
                     <connections>
                         <outlet property="PlayerNameTextField" destination="bFJ-e8-kG0" id="fJ5-eo-f1u"/>
                         <outlet property="playerBank" destination="lRO-he-Htl" id="Sm2-jt-l7a"/>
-                        <outlet property="playerCurrentBet" destination="Ydw-Xf-kz8" id="rNn-JF-m6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSl-vK-bqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1723" y="-2"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="OxS-Cw-z0n">
-            <objects>
-                <viewController id="bMe-WC-r7A" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Wsb-os-PXn"/>
-                        <viewControllerLayoutGuide type="bottom" id="t2I-oc-dbF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jaA-Jx-NYa">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="108"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="Gyz-t2-WRh">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="108"/>
-                                <color key="tintColor" red="0.46274509800000002" green="0.78039215689999997" blue="0.27058823529999998" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb0-32-LMd">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="108"/>
-                                <connections>
-                                    <segue destination="MTF-Bk-UPI" kind="unwind" unwindAction="unwindToHome:" id="WJ2-06-ujb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="Gyz-t2-WRh" firstAttribute="centerX" secondItem="jaA-Jx-NYa" secondAttribute="centerX" id="2nq-oF-Puf"/>
-                            <constraint firstItem="Gyz-t2-WRh" firstAttribute="height" secondItem="jaA-Jx-NYa" secondAttribute="height" id="ELM-kP-2FP"/>
-                            <constraint firstItem="nb0-32-LMd" firstAttribute="centerY" secondItem="Gyz-t2-WRh" secondAttribute="centerY" id="FAn-d0-Qoi"/>
-                            <constraint firstItem="nb0-32-LMd" firstAttribute="height" secondItem="Gyz-t2-WRh" secondAttribute="height" id="IoJ-5s-9cW"/>
-                            <constraint firstItem="Gyz-t2-WRh" firstAttribute="centerY" secondItem="jaA-Jx-NYa" secondAttribute="centerY" id="O4c-9p-eVd"/>
-                            <constraint firstItem="nb0-32-LMd" firstAttribute="centerX" secondItem="Gyz-t2-WRh" secondAttribute="centerX" id="TbR-wJ-otA"/>
-                            <constraint firstItem="Gyz-t2-WRh" firstAttribute="width" secondItem="jaA-Jx-NYa" secondAttribute="width" id="eAV-BM-PG3"/>
-                            <constraint firstItem="nb0-32-LMd" firstAttribute="width" secondItem="Gyz-t2-WRh" secondAttribute="width" id="n9Z-aj-kex"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="las-an-MRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="MTF-Bk-UPI" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1332" y="-2"/>
         </scene>
         <!--Cards View Controller-->
         <scene sceneID="Aif-wL-Rks">
@@ -437,19 +389,22 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="Ljm-4Y-ixh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="104"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="qxV-Xd-MNh">
-                                                                <rect key="frame" x="120" y="0.0" width="120" height="104"/>
+                                                                <rect key="frame" x="100" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="EV3-x6-2gv">
-                                                                <rect key="frame" x="240" y="0.0" width="120" height="104"/>
+                                                                <rect key="frame" x="200" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="fiQ-2j-MBk">
-                                                                <rect key="frame" x="360" y="0.0" width="120" height="104"/>
+                                                                <rect key="frame" x="300" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="KBJ-sc-pvi">
-                                                                <rect key="frame" x="480" y="0.0" width="120" height="104"/>
+                                                                <rect key="frame" x="400" y="0.0" width="100" height="104"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="TWa-B0-VfW">
+                                                                <rect key="frame" x="500" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
@@ -462,20 +417,23 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rnk-Ih-W3M">
                                                         <rect key="frame" x="0.0" y="208" width="600" height="104"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="46p-Jg-i5B">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="104"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="46p-Jg-i5B">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="jHP-QQ-SIw">
-                                                                <rect key="frame" x="120" y="0.0" width="120" height="104"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="jHP-QQ-SIw">
+                                                                <rect key="frame" x="100" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="kui-49-qaJ">
-                                                                <rect key="frame" x="240" y="0.0" width="120" height="104"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="kui-49-qaJ">
+                                                                <rect key="frame" x="200" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-Pj-7Dx">
-                                                                <rect key="frame" x="360" y="0.0" width="120" height="104"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-Pj-7Dx">
+                                                                <rect key="frame" x="300" y="0.0" width="100" height="104"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-Vz-or9">
-                                                                <rect key="frame" x="480" y="0.0" width="120" height="104"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-Vz-or9">
+                                                                <rect key="frame" x="400" y="0.0" width="100" height="104"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KingCard" translatesAutoresizingMaskIntoConstraints="NO" id="Fn0-ah-Dl5">
+                                                                <rect key="frame" x="500" y="0.0" width="100" height="104"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
@@ -506,12 +464,14 @@
                         <outlet property="dealerCard3" destination="EV3-x6-2gv" id="Fcm-JI-kMz"/>
                         <outlet property="dealerCard4" destination="fiQ-2j-MBk" id="55J-Xu-yWv"/>
                         <outlet property="dealerCard5" destination="KBJ-sc-pvi" id="ROG-5X-4Po"/>
+                        <outlet property="dealerCard6" destination="TWa-B0-VfW" id="wd8-hL-OU6"/>
                         <outlet property="dealerHandStackView" destination="8d4-Le-JKL" id="648-7I-UTU"/>
                         <outlet property="dealerInformationLabel" destination="se2-8H-KGI" id="zH4-ju-WeM"/>
                         <outlet property="playerCard1" destination="46p-Jg-i5B" id="Nda-FQ-GaD"/>
                         <outlet property="playerCard2" destination="jHP-QQ-SIw" id="gDb-4P-JWH"/>
                         <outlet property="playerCard4" destination="iQO-Pj-7Dx" id="7Dc-q7-fgV"/>
                         <outlet property="playerCard5" destination="pR2-Vz-or9" id="xtn-7R-vi8"/>
+                        <outlet property="playerCard6" destination="Fn0-ah-Dl5" id="za2-WH-70y"/>
                         <outlet property="playerHandStackView" destination="rnk-Ih-W3M" id="gco-i4-vjQ"/>
                         <outlet property="playercard3" destination="kui-49-qaJ" id="pAT-N1-QhH"/>
                     </connections>
@@ -540,6 +500,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ3-SQ-BXn">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="82"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Stand"/>
                                                 <connections>
                                                     <action selector="standClicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="Oil-gX-bNB"/>
@@ -547,6 +508,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-aX-7qj">
                                                 <rect key="frame" x="120" y="0.0" width="120" height="82"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Hit"/>
                                                 <connections>
                                                     <action selector="hitClicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="nEv-Z0-xpn"/>
@@ -554,7 +516,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-Vb-i99">
                                                 <rect key="frame" x="240" y="0.0" width="120" height="82"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Deal"/>
                                                 <connections>
                                                     <action selector="dealClicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="YnP-dS-IZz"/>
@@ -562,13 +524,15 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpz-rL-87k">
                                                 <rect key="frame" x="360" y="0.0" width="120" height="82"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Surrender"/>
                                                 <connections>
-                                                    <action selector="splitClicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="42K-Wm-6jN"/>
+                                                    <action selector="surrenderClicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="j8b-fA-idI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-SB-6W3">
                                                 <rect key="frame" x="480" y="0.0" width="120" height="82"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Double"/>
                                                 <connections>
                                                     <action selector="doubleClicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="HWf-zF-p0I"/>
@@ -581,40 +545,41 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-p8-Iy3">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="82"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Clear"/>
                                                 <connections>
                                                     <action selector="clearTransaction:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="JnZ-Up-uK4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tep-Nl-NpB">
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tep-Nl-NpB">
                                                 <rect key="frame" x="100" y="0.0" width="100" height="82"/>
                                                 <state key="normal" image="1_chip"/>
                                                 <connections>
                                                     <action selector="chip1Clicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="Tee-Qk-OcS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNP-kH-35w">
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNP-kH-35w">
                                                 <rect key="frame" x="200" y="0.0" width="100" height="82"/>
                                                 <state key="normal" image="5_chip"/>
                                                 <connections>
                                                     <action selector="chip5Clicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="osv-4U-4gj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-Wc-i04">
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-Wc-i04">
                                                 <rect key="frame" x="300" y="0.0" width="100" height="82"/>
                                                 <state key="normal" image="25_chip"/>
                                                 <connections>
                                                     <action selector="chip25Clicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="td3-eH-Hcc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFg-PV-APo">
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFg-PV-APo">
                                                 <rect key="frame" x="400" y="0.0" width="100" height="82"/>
                                                 <state key="normal" image="100_chip"/>
                                                 <connections>
                                                     <action selector="chip100Clicked:" destination="6Lb-BT-BvX" eventType="touchUpInside" id="OIo-1c-vGT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17v-6N-95Y">
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17v-6N-95Y">
                                                 <rect key="frame" x="500" y="0.0" width="100" height="82"/>
                                                 <state key="normal" image="500_chip"/>
                                                 <connections>
@@ -659,7 +624,6 @@
         <image name="25_chip" width="66" height="66"/>
         <image name="500_chip" width="66" height="66"/>
         <image name="5_chip" width="66" height="66"/>
-        <image name="Hamburger" width="512" height="512"/>
         <image name="KingCard" width="400" height="558"/>
     </resources>
 </document>

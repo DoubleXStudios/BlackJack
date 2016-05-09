@@ -22,12 +22,14 @@ class CardsViewController: UIViewController {
     @IBOutlet weak var dealerCard3: UIImageView!
     @IBOutlet weak var dealerCard4: UIImageView!
     @IBOutlet weak var dealerCard5: UIImageView!
+    @IBOutlet weak var dealerCard6: UIImageView!
 
     @IBOutlet weak var playerCard1: UIImageView!
     @IBOutlet weak var playerCard2: UIImageView!
     @IBOutlet weak var playercard3: UIImageView!
     @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var playerCard5: UIImageView!
+    @IBOutlet weak var playerCard6: UIImageView!
     
     @IBOutlet weak var dealerInformationLabel: UILabel!
     
@@ -81,6 +83,10 @@ class CardsViewController: UIViewController {
             setCardImage(cardImageName, imageView: playerCard5)
             return
         }
+        if(playerCard6.hidden == true){
+            setCardImage(cardImageName, imageView: playerCard6)
+            return
+        }
     }
     
     func animateReveal(){
@@ -89,11 +95,14 @@ class CardsViewController: UIViewController {
         self.dealerCard3.alpha = 0
         self.dealerCard4.alpha = 0
         self.dealerCard5.alpha = 0
+        self.dealerCard6.alpha = 0
+
         
         dealerCard2.hidden = true
         dealerCard3.hidden = true
         dealerCard4.hidden = true
         dealerCard5.hidden = true
+        dealerCard6.hidden = true
         
         for cardImageName in (gameController?.game.dealerHand.getCardImageNames())! {
             
@@ -130,6 +139,13 @@ class CardsViewController: UIViewController {
                 dealerCard5.hidden = false
                 UIView.animateWithDuration(1.0, animations: {
                     self.dealerCard5.alpha = 1
+                })
+            }
+            if(dealerCard6.hidden == true){
+                self.dealerCard6.image = UIImage(named: cardImageName)
+                dealerCard6.hidden = false
+                UIView.animateWithDuration(1.0, animations: {
+                    self.dealerCard6.alpha = 1
                 })
             }
         }
@@ -170,6 +186,10 @@ class CardsViewController: UIViewController {
             setCardImage(cardImageName, imageView: dealerCard5)
             return
         }
+        if(dealerCard6.hidden == true){
+            setCardImage(cardImageName, imageView: dealerCard6)
+            return
+        }
     }
     
     
@@ -190,24 +210,25 @@ class CardsViewController: UIViewController {
     
     func animateMessageAndClearCards(message: String){
         hideAllCards()
-        UIView.animateWithDuration(4.0, animations: {
+        UIView.animateWithDuration(5.0, animations: {
             self.dealerCard1.alpha = 0
             self.dealerCard2.alpha = 0
             self.dealerCard3.alpha = 0
             self.dealerCard4.alpha = 0
             self.dealerCard5.alpha = 0
+            self.dealerCard6.alpha = 0
             self.playerCard1.alpha = 0
             self.playerCard2.alpha = 0
             self.playercard3.alpha = 0
             self.playerCard4.alpha = 0
             self.playerCard5.alpha = 0
+            self.playerCard6.alpha = 0
         })
-        
         
         
         self.dealerInformationLabel.alpha = 0
         setInfoLabel(message)
-        UIView.animateWithDuration(4.0) {
+        UIView.animateWithDuration(5.0) {
             self.dealerInformationLabel.alpha = 1
         }
         
@@ -242,12 +263,14 @@ class CardsViewController: UIViewController {
         self.dealerCard3.alpha = 1
         self.dealerCard4.alpha = 1
         self.dealerCard5.alpha = 1
+        self.dealerCard6.alpha = 1
         
         self.playerCard1.alpha = 1
         self.playerCard2.alpha = 1
         self.playercard3.alpha = 1
         self.playerCard4.alpha = 1
         self.playerCard5.alpha = 1
+        self.playerCard6.alpha = 1
     }
     
     func hideAllCards(){
@@ -256,12 +279,15 @@ class CardsViewController: UIViewController {
         dealerCard3.hidden = true
         dealerCard4.hidden = true
         dealerCard5.hidden = true
+        dealerCard6.hidden = true
+
         
         playerCard1.hidden = true
         playerCard2.hidden = true
         playercard3.hidden = true
         playerCard4.hidden = true
         playerCard5.hidden = true
+        playerCard6.hidden = true
     }
 
     override func didReceiveMemoryWarning() {

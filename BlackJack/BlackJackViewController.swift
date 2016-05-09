@@ -44,7 +44,7 @@ class BlackJackViewController: UIViewController {
                 settingsForBetting()
                 break
             case .Payout:
-                print("4")
+                //print("4")
                 settingsForPayout()
                 break
             case .Playing:
@@ -52,7 +52,7 @@ class BlackJackViewController: UIViewController {
                 break
             case .Revealing:
                 settingsForRevealing()
-                print("1")
+                //print("1")
                 break
             }
         }
@@ -115,7 +115,7 @@ class BlackJackViewController: UIViewController {
     
     
     func settingsForPayout(){
-        print("payout happening")
+        //print("payout happening")
         self.buttonsViewController?.chip100Button.enabled = false
         self.buttonsViewController?.chip1Button.enabled = false
         self.buttonsViewController?.chip5Button.enabled = false
@@ -135,13 +135,24 @@ class BlackJackViewController: UIViewController {
                 gamePlayer.bank += (game.currentBet*2)
                 game.currentBet = 0
             } else {
-                cardsViewController?.animateMessageAndClearCards("Game Over Bitch")
-                game.currentBet = 0
+                if(game.hasSurrendered){
+                    cardsViewController?.animateMessageAndClearCards("Surrendered")
+                    game.currentBet = 0
+                } else {
+                    cardsViewController?.animateMessageAndClearCards("Game Lost")
+                    game.currentBet = 0
+                }
+                
             }
         } else {
-            cardsViewController?.animateMessageAndClearCards("It was a tie!")
-            gamePlayer.bank += game.currentBet
-            game.currentBet = 0
+            if(!game.hasSurrendered){
+                cardsViewController?.animateMessageAndClearCards("It was a tie!")
+                gamePlayer.bank += game.currentBet
+                game.currentBet = 0
+            } else {
+                cardsViewController?.animateMessageAndClearCards("Surrendered")
+                game.currentBet = 0
+            }
         }
  
         if headerViewController != nil{
@@ -151,6 +162,8 @@ class BlackJackViewController: UIViewController {
         if(gamePlayer.bank > 0){
             buttonsViewController?.dealButton.enabled = true
             buttonsViewController?.dealButton.setTitle("New Game", forState: .Normal)
+        } else {
+            cardsViewController?.animateMessageAndClearCards("Game Over")
         }
         
 
@@ -174,7 +187,7 @@ class BlackJackViewController: UIViewController {
             cardsViewController?.animateReveal()
         
             game.state = State.Payout
-            print("3")
+            //print("3")
             updateAll()
         
 

@@ -145,14 +145,15 @@ class BlackJackButtonsViewController: UIViewController {
         
     }
     
-    
-    //actually
-    @IBAction func splitClicked(sender: AnyObject) {
-        
+    @IBAction func surrenderClicked(sender: AnyObject) {
+        gameController?.game.surrender()
+        gameController?.updateAll()
     }
 
     
     @IBAction func doubleClicked(sender: AnyObject) {
+        gameController?.game.doubleDown()
+        gameController?.updateAll()
     }
 
 

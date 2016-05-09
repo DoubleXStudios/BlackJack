@@ -16,6 +16,7 @@ public class Game {
     public var playerHand: Hand
     
     public var hasWon: Bool? = nil
+    public var hasSurrendered: Bool = false
     
     public var dealerRevealed: Bool
     public var currentBet : Int = 0
@@ -29,6 +30,7 @@ public class Game {
         state = .Betting
         dealerRevealed = false
         player = newPlayer
+        hasSurrendered = false
     }
     
     public func betMoney(amount: Int)->Bool{
@@ -72,29 +74,37 @@ public class Game {
     public func doubleDown(){
         if(state == .Playing){
             if(!playerHand.hasDoubled){
+                print("bank prior to double down \(player.bank)")
                 if(player.withdraw(self.currentBet)){
+                    print("bank after double down \(player.bank)")
+                    print("bet before double down \(self.currentBet)")
                     self.currentBet += currentBet
+                    print("bet after double down \(self.currentBet)")
                     let card = deck.getRandomCard()
                     playerHand.hand.append(card)
                     playerHand.hasDoubled = true
                 }
             }
             state = .Revealing
+            reveal()
         }
         
     }
     
     public func surrender(){
-        if(currentBet > 1){
-            let toReturn = Int(currentBet / 2)
-            player.bank += toReturn
-            currentBet += toReturn + (currentBet % 2)
+        if(state == .Playing){
+            if(currentBet > 1){
+                let toReturn = Int(currentBet / 2)
+                player.bank += toReturn
+                currentBet += toReturn + (currentBet % 2)
+            }
+            hasSurrendered = true
+            state = .Revealing
         }
-        state = .Revealing
     }
     
     public func reveal(){
-        
+            //print("Hi")
             dealerRevealed = true
             state = .Revealing
             if(playerHand.getHandValue() < 22){
@@ -104,7 +114,7 @@ public class Game {
                 }
                 if(dealerHand.getHandValue() < playerHand.getHandValue() || dealerHand.getHandValue() > 21){
                     hasWon = true
-                } else {
+                } else if (dealerHand.getHandValue() > playerHand.getHandValue()) {
                     hasWon = false
                 }
             } else {
