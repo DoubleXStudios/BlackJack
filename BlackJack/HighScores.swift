@@ -27,6 +27,7 @@ class HighScores  {
         
     }
     
+    
     func updateHighScore(name: String, scoreValue: Int){
         let realmObjects = blackJackRealm.objects(HighScore)
         for o in realmObjects{

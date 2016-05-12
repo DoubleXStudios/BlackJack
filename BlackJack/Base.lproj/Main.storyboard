@@ -85,6 +85,7 @@
                             <constraint firstItem="lLd-eA-JXb" firstAttribute="centerX" secondItem="RrL-XI-Q76" secondAttribute="centerX" id="2BY-5H-wjX"/>
                             <constraint firstItem="M8l-lZ-iiR" firstAttribute="top" secondItem="Rk6-ut-Ae7" secondAttribute="bottom" id="3gD-vt-z25"/>
                             <constraint firstItem="Znh-Ui-zUN" firstAttribute="width" secondItem="RrL-XI-Q76" secondAttribute="width" id="HNE-fC-6Nu"/>
+                            <constraint firstItem="M8l-lZ-iiR" firstAttribute="top" secondItem="lLd-eA-JXb" secondAttribute="bottom" constant="172" id="LcL-Iw-57r"/>
                             <constraint firstItem="lLd-eA-JXb" firstAttribute="top" secondItem="RrL-XI-Q76" secondAttribute="top" constant="116" id="Lpw-qH-SgH"/>
                             <constraint firstItem="Znh-Ui-zUN" firstAttribute="top" secondItem="BrP-GF-BrY" secondAttribute="bottom" id="W8y-s0-CMk"/>
                             <constraint firstItem="Rk6-ut-Ae7" firstAttribute="top" secondItem="RrL-XI-Q76" secondAttribute="top" constant="436" id="WDp-jx-OtU"/>
@@ -330,15 +331,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-vi-8lm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-ha-c8C">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yaO-Wa-Tzk">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="❮ Quit"/>
-                                        <connections>
-                                            <segue destination="OwN-bv-mOp" kind="unwind" unwindAction="unwindToHome:" id="9q8-l4-Xqn"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-e8-kG0">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-ha-c8C">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="❮ Quit"/>
+                                                <connections>
+                                                    <segue destination="OwN-bv-mOp" kind="unwind" unwindAction="unwindToHome:" id="9q8-l4-Xqn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-e8-kG0">
                                         <rect key="frame" x="200" y="0.0" width="200" height="108"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -346,12 +352,23 @@
                                             <action selector="playerNameChangeComplete:" destination="qu5-Ci-gwe" eventType="editingDidEnd" id="wO5-Mn-eom"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank: $ 1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRO-he-Htl">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-49-KLD">
                                         <rect key="frame" x="400" y="0.0" width="200" height="108"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank: $ 1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRO-he-Htl">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="54"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="11"/>
+                                                <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet: $ 20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95G-W9-b3q">
+                                                <rect key="frame" x="0.0" y="54" width="200" height="54"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="11"/>
+                                                <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -366,6 +383,7 @@
                     <connections>
                         <outlet property="PlayerNameTextField" destination="bFJ-e8-kG0" id="fJ5-eo-f1u"/>
                         <outlet property="playerBank" destination="lRO-he-Htl" id="Sm2-jt-l7a"/>
+                        <outlet property="playerBet" destination="95G-W9-b3q" id="W5E-9x-0e6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSl-vK-bqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
