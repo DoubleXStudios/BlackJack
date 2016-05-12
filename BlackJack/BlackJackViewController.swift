@@ -12,8 +12,8 @@ class BlackJackViewController: UIViewController {
 
     @IBOutlet weak var BigContainer: UIView!
     
-    var game: Game = Game(newPlayer: Player(user: "Bob", deposit: 100))
-    var gamePlayer: Player = Player(user: "Bob", deposit: 100)
+    var game: Game = Game(newPlayer: Player(user: "?", deposit: 100))
+    var gamePlayer: Player = Player(user: "?", deposit: 100)
     
     var buttonsViewController: BlackJackButtonsViewController?
     var headerViewController: BlackJackGameHeaderViewController?
@@ -130,6 +130,11 @@ class BlackJackViewController: UIViewController {
         self.buttonsViewController?.surrenderButton.enabled = false
         self.buttonsViewController?.doubleButton.enabled = false
         
+        if(headerViewController?.PlayerNameTextField.text == ""){
+            headerViewController?.PlayerNameTextField.text = "?"
+            gamePlayer.name = "?"
+        }
+        
         print(game.hasWon)
         if((game.hasWon) != nil ){
             if(game.hasWon!){
@@ -163,7 +168,7 @@ class BlackJackViewController: UIViewController {
         
         if(gamePlayer.bank > 0){
             buttonsViewController?.dealButton.enabled = true
-            buttonsViewController?.dealButton.setTitle("New Game", forState: .Normal)
+            buttonsViewController?.dealButton.setTitle("NewGame", forState: .Normal)
         } else {
             cardsViewController?.animateMessageAndClearCards("Game Over")
         }

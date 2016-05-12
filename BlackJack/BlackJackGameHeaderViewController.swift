@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BlackJackGameHeaderViewController: UIViewController {
+class BlackJackGameHeaderViewController: UIViewController,  UITextFieldDelegate {
 
     var gameController: BlackJackViewController?
     
@@ -17,7 +17,12 @@ class BlackJackGameHeaderViewController: UIViewController {
     @IBOutlet weak var PlayerNameTextField: UITextField!
     
     @IBAction func playerNameChangeComplete(sender: AnyObject) {
-        gameController?.gamePlayer.name = PlayerNameTextField.text!
+        if(!(PlayerNameTextField.text == "")){
+            gameController?.gamePlayer.name = PlayerNameTextField.text!
+        } else {
+            gameController?.gamePlayer.name = "Unknown"
+            PlayerNameTextField.text = "Unknown"
+        }
     }
     
     @IBOutlet weak var playerBank: UILabel!
@@ -25,10 +30,17 @@ class BlackJackGameHeaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.PlayerNameTextField.delegate = self
+        
         
         reloadValues()
         
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func reloadValues(){

@@ -89,31 +89,42 @@ class ScoreBoardViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("1")
+        scoreBoardList = HighScores()
+        print("2")
+        scoreBoardList!.populateHighScoresFromRealm()
+        print("3")
+        updateLabels()
+
+    }
 
     func updateLabels(){
         clearScoreBoard()
-        let top5 = getTop5()
-        for pair in top5{
+        let top5 = scoreBoardList?.highScores
+        for pair in top5!{
             if(!topScoreSet){
                 topScoreSet = true
-                topScoreNameLabel.text = pair.0
-                topScoreValueLabel.text = "$ \(pair.1).00"
+                topScoreNameLabel.text = pair.name
+                topScoreValueLabel.text = "$\(pair.score)"
             } else if(!secondScoreSet){
                 secondScoreSet = true
-                secondScoreNameLabel.text = pair.0
-                secondScoreValueLabel.text = "$ \(pair.1).00"
+                secondScoreNameLabel.text = pair.name
+                secondScoreValueLabel.text = "$\(pair.score)"
             } else if(!thirdScoreSet){
                 thirdScoreSet = true
-                thirdScoreNameLabel.text = pair.0
-                thirdScoreValueLabel.text = "$ \(pair.1).00"
+                thirdScoreNameLabel.text = pair.name
+                thirdScoreValueLabel.text = "$ \(pair.score)"
             } else if(!fourthScoreSet){
                 fourthScoreSet = true
-                fourthScoreNameLabel.text = pair.0
-                fourthScoreValueLabel.text = "$ \(pair.1).00"
+                fourthScoreNameLabel.text = pair.name
+                fourthScoreValueLabel.text = "$\(pair.score)"
             } else if(!fifthScoreSet){
                 fifthScoreSet = true
-                fifthScoreNameLabel.text = pair.0
-                fifthScoreValueLabel.text = "$ \(pair.1).00"
+                fifthScoreNameLabel.text = pair.name
+                fifthScoreValueLabel.text = "$\(pair.score)"
             }
 
         }

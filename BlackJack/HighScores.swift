@@ -16,7 +16,7 @@ class HighScores  {
     func populateHighScoresFromRealm(){
         let realmObjects = blackJackRealm.objects(HighScore)
         for o in realmObjects{
-            print("Name: \(o.name), Score: \(o.score)")
+            //print("Name: \(o.name), Score: \(o.score)")
             if(o.name == ""){
                 try! blackJackRealm.write({ 
                     blackJackRealm.delete(o)
@@ -52,7 +52,7 @@ class HighScores  {
     func appendHighScore(name: String, score: Int){
         let newScore = HighScore(value: ["name": name, "score":score])
         highScores.append(newScore)
-        highScores.sortInPlace(){$0.score < $1.score}
+        highScores.sortInPlace(){$0.score > $1.score}
 
     }
     
